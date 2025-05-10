@@ -4,7 +4,7 @@ This is a [Glyphs.app](http://glyphsapp.com/) filter for fixing interpolation ki
 
 ![RealignHandles](RealignHandles.png)
 
-It is most useful as a custom parameter post interpolation. (Note that the parameter does not work in variable font exports because there is no post interpolation in VFs.)
+It is most useful as a *PreFilter* custom parameter post interpolation. (Note that the parameter does not work in variable font exports because there is no post interpolation in VFs.)
 
 
 ### Installation
@@ -22,11 +22,11 @@ It is most useful as a custom parameter post interpolation. (Note that the param
 
 #### as custom parameter
 
-1. In *File > Font Info > Exports,* in one of the instances, add a *Filter* custom parameter.
+1. In *File > Font Info > Exports,* in one of the instances, add a *PreFilter* custom parameter.
 2. As its value, enter `RealignHandles`.
 3. If you want to limit it to certain glyphs only, add a semicolon, `include:` followed by comma-separated glyph name list, e.g., `RealignHandles; include: germandbls, dagger`
 
-The custom parameter only works for static instances.
+The custom parameter only works for static instances, not for variable fonts. *Realign Handles* needs to be added as *PreFilter,* not *Filter,* because after overlap removal the nodes lose their smooth property.
 
 
 ### License
