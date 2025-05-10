@@ -18,11 +18,10 @@ from GlyphsApp.plugins import FilterWithoutDialog
 from AppKit import NSPoint, NSEvent, NSEventModifierFlagOption
 
 
-def triplet(n1, n2, n3):
-	return (*n1.position, *n2.position, *n3.position)
-
-
 def straightenBCPs(layer):
+
+	def triplet(n1, n2, n3):
+		return (*n1.position, *n2.position, *n3.position)
 
 	def closestPointOnLine(P, A, B):
 		# vector of line AB
@@ -98,6 +97,7 @@ class RealignHandles(FilterWithoutDialog):
 			'fr': 'Realigner poignées',
 			'es': 'Realinear manejadores',
 		})
+
 
 	@objc.python_method
 	def filter(self, layer, inEditView, customParameters):
